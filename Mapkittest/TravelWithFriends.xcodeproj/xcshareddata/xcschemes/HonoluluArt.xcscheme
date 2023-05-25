@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D2A5F1FF1F4A9144005CD714"
-               BuildableName = "HonoluluArt.app"
-               BlueprintName = "HonoluluArt"
-               ReferencedContainer = "container:HonoluluArt.xcodeproj">
+               BuildableName = "TravelWithFriends.app"
+               BlueprintName = "TravelWithFriends"
+               ReferencedContainer = "container:TravelWithFriends.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D2A5F1FF1F4A9144005CD714"
-            BuildableName = "HonoluluArt.app"
-            BlueprintName = "HonoluluArt"
-            ReferencedContainer = "container:HonoluluArt.xcodeproj">
+            BuildableName = "TravelWithFriends.app"
+            BlueprintName = "TravelWithFriends"
+            ReferencedContainer = "container:TravelWithFriends.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D2A5F1FF1F4A9144005CD714"
-            BuildableName = "HonoluluArt.app"
-            BlueprintName = "HonoluluArt"
-            ReferencedContainer = "container:HonoluluArt.xcodeproj">
+            BuildableName = "TravelWithFriends.app"
+            BlueprintName = "TravelWithFriends"
+            ReferencedContainer = "container:TravelWithFriends.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

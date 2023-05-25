@@ -73,15 +73,53 @@ class ViewController: UIViewController {
     print("shortestlength:", shortestLength)
     print("shortest route:", shortestRoute)
     
+    //kelio vaizdavimas
+    if shortestRoute.count > 1 {
+        for i in 0..<shortestRoute.count-1 {
+            let sourcePlacemark = MKPlacemark(coordinate: shortestRoute[i].coordinate)
+            let destinationPlacemark = MKPlacemark(coordinate: shortestRoute[i+1].coordinate)
+            
+            let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+            let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+            
+            let directionsRequest = MKDirections.Request()
+            directionsRequest.source = sourceMapItem
+            directionsRequest.destination = destinationMapItem
+            directionsRequest.transportType = .automobile
+            
+            let directions = MKDirections(request: directionsRequest)
+            directions.calculate { response, error in
+                guard let route = response?.routes.first else {
+                    if let error = error {
+                        print("Error calculating route:", error.localizedDescription)
+                    }
+                    return
+                }
+                // nubrezia route
+                self.mapView.addOverlay(route.polyline)
+            }
+        }
+    }
+
+    
   }
   
-  
+  func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+      if let polylineOverlay = overlay as? MKPolyline {
+          let renderer = MKPolylineRenderer(overlay: polylineOverlay)
+          renderer.strokeColor = UIColor.red
+          renderer.lineWidth = 3
+          return renderer
+      }
+      
+      return MKOverlayRenderer(overlay: overlay)
+  }
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
   initialize()
-    // Set initial location in Vilnius
+    // setinu initiallocationa
    let initialLocation = CLLocation(latitude: 54.702593, longitude: 25.288330)
     mapView.centerToLocation(initialLocation)
     
@@ -103,33 +141,8 @@ class ViewController: UIViewController {
       LocationMarkerView.self,
       forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     
-   // loadInitialData()
     mapView.addAnnotations(objectLocations)
   }
-  
-//  private func loadInitialData() {
-//    // 1
-//    guard
-//      let fileName = Bundle.main.url(forResource: "PublicArt", withExtension: "geojson"),
-//      let artworkData = try? Data(contentsOf: fileName)
-//      else {
-//        return
-//    }
-//
-//    do {
-//      // 2
-//      let features = try MKGeoJSONDecoder()
-//        .decode(artworkData)
-//        .compactMap { $0 as? MKGeoJSONFeature }
-//      // 3
-//      let validWorks = features.compactMap(Artwork.init)
-//      // 4
-//      .append(contentsOf: validWorks)
-//    } catch {
-//      // 5
-//      print("Unexpected error: \(error).")
-//    }
-//  }
 }
 
 private extension MKMapView {

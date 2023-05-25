@@ -26,7 +26,7 @@
 		6871EEE429FD708600A22DB5 /* LocationsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViews.swift; sourceTree = "<group>"; };
 		782E4D3F2407047E0070BA73 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		782E4D41240709F70070BA73 /* ArtworkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkViews.swift; sourceTree = "<group>"; };
-		D2A5F2001F4A9144005CD714 /* HonoluluArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HonoluluArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2A5F2001F4A9144005CD714 /* TravelWithFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWithFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A5F2081F4A9144005CD714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2A5F20A1F4A9144005CD714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2A5F20F1F4A9144005CD714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		D2A5F1F71F4A9143005CD714 = {
 			isa = PBXGroup;
 			children = (
-				D2A5F2021F4A9144005CD714 /* HonoluluArt */,
+				D2A5F2021F4A9144005CD714 /* TravelWithFriends */,
 				D2A5F2011F4A9144005CD714 /* Products */,
 			);
 			indentWidth = 2;
@@ -58,12 +58,12 @@
 		D2A5F2011F4A9144005CD714 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2A5F2001F4A9144005CD714 /* HonoluluArt.app */,
+				D2A5F2001F4A9144005CD714 /* TravelWithFriends.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D2A5F2021F4A9144005CD714 /* HonoluluArt */ = {
+		D2A5F2021F4A9144005CD714 /* TravelWithFriends */ = {
 			isa = PBXGroup;
 			children = (
 				D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */,
@@ -77,15 +77,15 @@
 				6871EEE429FD708600A22DB5 /* LocationsViews.swift */,
 				6830C4972A07A246007F0760 /* Launch Screen1.storyboard */,
 			);
-			path = HonoluluArt;
+			path = TravelWithFriends;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D2A5F1FF1F4A9144005CD714 /* HonoluluArt */ = {
+		D2A5F1FF1F4A9144005CD714 /* TravelWithFriends */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2A5F2121F4A9144005CD714 /* Build configuration list for PBXNativeTarget "HonoluluArt" */;
+			buildConfigurationList = D2A5F2121F4A9144005CD714 /* Build configuration list for PBXNativeTarget "TravelWithFriends" */;
 			buildPhases = (
 				D2A5F1FC1F4A9144005CD714 /* Sources */,
 				D2A5F1FD1F4A9144005CD714 /* Frameworks */,
@@ -95,12 +95,12 @@
 			);
 			dependencies = (
 			);
-			name = HonoluluArt;
+			name = TravelWithFriends;
 			packageProductDependencies = (
 				6871EEE729FD7D9400A22DB5 /* Algorithms */,
 			);
 			productName = MyRWTutorial;
-			productReference = D2A5F2001F4A9144005CD714 /* HonoluluArt.app */;
+			productReference = D2A5F2001F4A9144005CD714 /* TravelWithFriends.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -119,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D2A5F1FB1F4A9143005CD714 /* Build configuration list for PBXProject "HonoluluArt" */;
+			buildConfigurationList = D2A5F1FB1F4A9143005CD714 /* Build configuration list for PBXProject "TravelWithFriends" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -135,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2A5F1FF1F4A9144005CD714 /* HonoluluArt */,
+				D2A5F1FF1F4A9144005CD714 /* TravelWithFriends */,
 			);
 		};
 /* End PBXProject section */
@@ -301,14 +301,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon 1";
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = HonoluluArt/Info.plist;
+				INFOPLIST_FILE = TravelWithFriends/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Routes;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.HonoluluArt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.audriusmisk.TravelWithFriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -322,14 +322,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon 1";
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = HonoluluArt/Info.plist;
+				INFOPLIST_FILE = TravelWithFriends/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Routes;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.HonoluluArt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.audriusmisk.TravelWithFriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -339,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D2A5F1FB1F4A9143005CD714 /* Build configuration list for PBXProject "HonoluluArt" */ = {
+		D2A5F1FB1F4A9143005CD714 /* Build configuration list for PBXProject "TravelWithFriends" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2A5F2101F4A9144005CD714 /* Debug */,
@@ -348,7 +348,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D2A5F2121F4A9144005CD714 /* Build configuration list for PBXNativeTarget "HonoluluArt" */ = {
+		D2A5F2121F4A9144005CD714 /* Build configuration list for PBXNativeTarget "TravelWithFriends" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2A5F2131F4A9144005CD714 /* Debug */,
