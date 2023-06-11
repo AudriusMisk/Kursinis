@@ -75,13 +75,58 @@
                     <view key="view" contentMode="scaleToFill" id="y0p-kI-4Sv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="40B-Ch-wJ6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="People" rowHeight="100" id="aNg-XZ-S34" customClass="FriendTableViewCell" customModule="TravelWithFriends" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aNg-XZ-S34" id="GMZ-x5-say">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMh-rN-pM3">
+                                                    <rect key="frame" x="16" y="11" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zf-Pb-rO4">
+                                                    <rect key="frame" x="16" y="55" width="66" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3Zf-Pb-rO4" firstAttribute="leading" secondItem="GMZ-x5-say" secondAttribute="leadingMargin" id="9pV-aR-vzm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3Zf-Pb-rO4" secondAttribute="bottom" constant="13" id="MJF-7O-xbS"/>
+                                                <constraint firstItem="3Zf-Pb-rO4" firstAttribute="top" secondItem="CMh-rN-pM3" secondAttribute="bottom" constant="23" id="YS8-Hp-HIS"/>
+                                                <constraint firstItem="CMh-rN-pM3" firstAttribute="leading" secondItem="GMZ-x5-say" secondAttribute="leadingMargin" id="fcL-rP-cTn"/>
+                                                <constraint firstItem="CMh-rN-pM3" firstAttribute="top" secondItem="GMZ-x5-say" secondAttribute="topMargin" id="w1p-z5-85j"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="friendLocation" destination="3Zf-Pb-rO4" id="ZLj-OB-lOs"/>
+                                            <outlet property="friendName" destination="CMh-rN-pM3" id="6iN-3E-qkP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RZf-uT-Xsn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="40B-Ch-wJ6" id="tS5-Qv-v2C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dg9-Ld-gZ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15" y="52"/>
+            <point key="canvasLocation" x="13.6" y="51.724137931034484"/>
         </scene>
     </scenes>
     <resources>
