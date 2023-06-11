@@ -1,6 +1,5 @@
 import Foundation
 import MapKit
-import Contacts
 
 class ObjectLocations: NSObject, MKAnnotation {
   

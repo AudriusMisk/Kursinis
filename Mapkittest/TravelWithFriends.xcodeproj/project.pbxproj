@@ -13,8 +13,8 @@
 		6871EEE329FD5DA200A22DB5 /* ObjectLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871EEE229FD5DA200A22DB5 /* ObjectLocations.swift */; };
 		6871EEE529FD708600A22DB5 /* LocationsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871EEE429FD708600A22DB5 /* LocationsViews.swift */; };
 		6871EEE829FD7D9400A22DB5 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 6871EEE729FD7D9400A22DB5 /* Algorithms */; };
-		782E4D402407047E0070BA73 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E4D3F2407047E0070BA73 /* Artwork.swift */; };
-		782E4D42240709F70070BA73 /* ArtworkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E4D41240709F70070BA73 /* ArtworkViews.swift */; };
+		6879EDF52A363AA400EAEEDA /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879EDF42A363AA400EAEEDA /* FriendsListViewController.swift */; };
+		782E4D402407047E0070BA73 /* Markers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E4D3F2407047E0070BA73 /* Markers.swift */; };
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F20A1F4A9144005CD714 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -24,8 +24,8 @@
 		6830C4972A07A246007F0760 /* Launch Screen1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen1.storyboard"; sourceTree = "<group>"; };
 		6871EEE229FD5DA200A22DB5 /* ObjectLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectLocations.swift; sourceTree = "<group>"; };
 		6871EEE429FD708600A22DB5 /* LocationsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViews.swift; sourceTree = "<group>"; };
-		782E4D3F2407047E0070BA73 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
-		782E4D41240709F70070BA73 /* ArtworkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkViews.swift; sourceTree = "<group>"; };
+		6879EDF42A363AA400EAEEDA /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		782E4D3F2407047E0070BA73 /* Markers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markers.swift; sourceTree = "<group>"; };
 		D2A5F2001F4A9144005CD714 /* TravelWithFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWithFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A5F2081F4A9144005CD714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2A5F20A1F4A9144005CD714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,11 +71,11 @@
 				D2A5F2071F4A9144005CD714 /* Main.storyboard */,
 				D2A5F20A1F4A9144005CD714 /* Assets.xcassets */,
 				D2A5F20F1F4A9144005CD714 /* Info.plist */,
-				782E4D3F2407047E0070BA73 /* Artwork.swift */,
-				782E4D41240709F70070BA73 /* ArtworkViews.swift */,
+				782E4D3F2407047E0070BA73 /* Markers.swift */,
 				6871EEE229FD5DA200A22DB5 /* ObjectLocations.swift */,
 				6871EEE429FD708600A22DB5 /* LocationsViews.swift */,
 				6830C4972A07A246007F0760 /* Launch Screen1.storyboard */,
+				6879EDF42A363AA400EAEEDA /* FriendsListViewController.swift */,
 			);
 			path = TravelWithFriends;
 			sourceTree = "<group>";
@@ -161,8 +161,8 @@
 				680E85E32A072CC90083C06F /* AppDelegate.swift in Sources */,
 				680E85E22A07298B0083C06F /* ViewController.swift in Sources */,
 				6871EEE329FD5DA200A22DB5 /* ObjectLocations.swift in Sources */,
-				782E4D42240709F70070BA73 /* ArtworkViews.swift in Sources */,
-				782E4D402407047E0070BA73 /* Artwork.swift in Sources */,
+				782E4D402407047E0070BA73 /* Markers.swift in Sources */,
+				6879EDF52A363AA400EAEEDA /* FriendsListViewController.swift in Sources */,
 				6871EEE529FD708600A22DB5 /* LocationsViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

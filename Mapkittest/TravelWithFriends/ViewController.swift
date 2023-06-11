@@ -4,13 +4,151 @@ import Algorithms
 import CoreLocation
 
 class ViewController: UIViewController {
-  @IBOutlet private var mapView: MKMapView!
+
+    @IBOutlet weak var cinemaButton: UIButton!
+    @IBOutlet weak var poolButton: UIButton!
+    @IBOutlet weak var bowlingButton: UIButton!
+    @IBOutlet private var mapView: MKMapView!
   private var objectLocations: [ObjectLocations] = []
+  
+  enum ActivityType {
+  case bowling
+  case cinema
+  case pool
+  }
   
   func distance(from location1: CLLocation, to location2: CLLocation) -> CLLocationDistance {
     return location1.distance(from: location2)
   }
-  func initialize() {
+  
+  func initializeStartLocation() -> ObjectLocations {
+      let startLocation = ObjectLocations(
+          title: "Me",
+          locationType: .starting,
+         // coordinate: CLLocationCoordinate2D(latitude: 54.702593, longitude: 25.288330)
+          coordinate: CLLocationCoordinate2D(latitude: 54.728395, longitude: 25.296547)
+      )
+      return startLocation
+  }
+
+  func initializePersons() -> [ObjectLocations] {
+      let personOne = ObjectLocations(
+          title: "Jonas",
+          locationType: .person,
+          coordinate: CLLocationCoordinate2D(latitude: 54.717594, longitude: 25.284990)
+      )
+      
+      let personTwo = ObjectLocations(
+          title: "Petras",
+          locationType: .person,
+          coordinate: CLLocationCoordinate2D(latitude: 54.712715, longitude: 25.303593)
+      )
+      
+      let personThree = ObjectLocations(
+          title: "Rimas",
+          locationType: .person,
+          coordinate: CLLocationCoordinate2D(latitude: 54.728395, longitude: 25.296547)
+      )
+      
+      return [personOne, personTwo, personThree]
+  }
+
+  func initializeBowling() -> [ObjectLocations] {
+      let activityOne = ObjectLocations(
+          title: "Boulingas Zirmunu",
+          locationType: .activity,
+          coordinate: CLLocationCoordinate2D(latitude: 54.718300, longitude: 25.303018)
+      )
+      
+      let activityTwo = ObjectLocations(
+          title: "Boulingas Apollo",
+          locationType: .activity,
+          coordinate: CLLocationCoordinate2D(latitude: 54.709838, longitude: 25.263310)
+      )
+      
+      let activityThree = ObjectLocations(
+          title: "Boulingas Amerigo",
+          locationType: .activity,
+          coordinate: CLLocationCoordinate2D(latitude: 54.708014, longitude: 25.227058)
+      )
+      
+      return [activityOne, activityTwo, activityThree]
+  }
+  
+  func initializeCinema() -> [ObjectLocations] {
+      let activityOne = ObjectLocations(
+          title: "Multikino",
+          locationType: .activity,
+          coordinate: CLLocationCoordinate2D(latitude: 54.714477, longitude: 25.276945)
+      )
+      
+      let activityTwo = ObjectLocations(
+          title: "Pasaka",
+          locationType: .activity,
+          coordinate: CLLocationCoordinate2D(latitude: 54.682785, longitude: 25.281301)
+      )
+      
+      let activityThree = ObjectLocations(
+          title: "Forum Cinemas",
+          locationType: .activity,
+          coordinate: CLLocationCoordinate2D(latitude: 54.678441, longitude: 25.256302)
+      )
+      
+      return [activityOne, activityTwo, activityThree]
+  }
+  
+  func initializePool() -> [ObjectLocations] {
+      let activityOne = ObjectLocations(
+          title: "Piramide",
+          locationType: .activity,
+          coordinate: CLLocationCoordinate2D(latitude: 54.676423, longitude: 25.265149)
+      )
+      
+      let activityTwo = ObjectLocations(
+          title: "FUKSAS",
+          locationType: .activity,
+          coordinate: CLLocationCoordinate2D(latitude: 54.687822, longitude: 25.275592)
+      )
+      
+      let activityThree = ObjectLocations(
+          title: "Cue",
+          locationType: .activity,
+          coordinate: CLLocationCoordinate2D(latitude: 54.696943, longitude: 25.298553)
+      )
+      
+      return [activityOne, activityTwo, activityThree]
+  }
+  
+  func calc(activityType:ActivityType){
+    let activities: [ObjectLocations]
+    switch activityType {
+    case .bowling:
+      activities = initializeBowling()
+    case .cinema:
+      activities = initializeCinema()
+    case .pool:
+      activities = initializePool()
+    }
+    let startLocation = initializeStartLocation()
+    let people = initializePersons()
+    let locations: [ObjectLocations] = [startLocation] + people + activities
+    
+    objectLocations = locations
+  
+    let permutations = people.permutations(ofCount: people.count).map { Array($0) }
+    var possibleRoutes = [[ObjectLocations]]()
+
+    for a in activities {
+        for p in permutations {
+            let route: [ObjectLocations] = [startLocation] + p + [a]
+            possibleRoutes.append(route)
+        }
+    }
+
+    findRoute(routes: possibleRoutes)
+  }
+
+  /*func initialize() {
     let startLocation = ObjectLocations(
       title: "Me",
       locationType: .starting,
@@ -45,7 +183,7 @@ class ViewController: UIViewController {
       
     }
     findRoute(routes: possibleRoutes)
-  }
+  }*/
   
   
   
@@ -72,6 +210,7 @@ class ViewController: UIViewController {
     }
     print("shortestlength:", shortestLength)
     print("shortest route:", shortestRoute)
+    self.mapView.removeOverlays(self.mapView.overlays)
     
     //kelio vaizdavimas
     if shortestRoute.count > 1 {
@@ -100,7 +239,6 @@ class ViewController: UIViewController {
             }
         }
     }
-
     
   }
   
@@ -118,7 +256,10 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-  initialize()
+    bowlingButton.addTarget(self, action: #selector(bowlingClicked), for: .touchUpInside)
+    cinemaButton.addTarget(self, action: #selector(cinemaClicked), for: .touchUpInside)
+    poolButton.addTarget(self, action: #selector(poolClicked), for: .touchUpInside)
+  //initialize()
     // setinu initiallocationa
    let initialLocation = CLLocation(latitude: 54.702593, longitude: 25.288330)
     mapView.centerToLocation(initialLocation)
@@ -141,9 +282,26 @@ class ViewController: UIViewController {
       LocationMarkerView.self,
       forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     
-    mapView.addAnnotations(objectLocations)
+   // mapView.addAnnotations(objectLocations)
   }
+  
+  @objc func bowlingClicked() {
+    calc(activityType: .bowling)
+          //initialize()
+    mapView.addAnnotations(objectLocations)
+      }
+  @objc func cinemaClicked() {
+    calc(activityType: .cinema)
+          //initialize()
+    mapView.addAnnotations(objectLocations)
+      }
+  @objc func poolClicked() {
+    calc(activityType: .pool)
+          //initialize()
+    mapView.addAnnotations(objectLocations)
+      }
 }
+
 
 private extension MKMapView {
   func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {

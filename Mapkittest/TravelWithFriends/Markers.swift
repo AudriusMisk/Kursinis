@@ -2,7 +2,7 @@ import Foundation
 import MapKit
 import Contacts
 
-class Artwork: NSObject, MKAnnotation {
+class Markers: NSObject, MKAnnotation {
   let title: String?
   let locationName: String?
   let discipline: String?
@@ -23,10 +23,8 @@ class Artwork: NSObject, MKAnnotation {
   }
   
   init?(feature: MKGeoJSONFeature) {
-    // 1
     guard
       let point = feature.geometry.first as? MKPointAnnotation,
-      // 2
       let propertiesData = feature.properties,
       let json = try? JSONSerialization.jsonObject(with: propertiesData),
       let properties = json as? [String: Any]
@@ -34,7 +32,6 @@ class Artwork: NSObject, MKAnnotation {
         return nil
     }
     
-    // 3
     title = properties["title"] as? String
     locationName = properties["location"] as? String
     discipline = properties["discipline"] as? String
