@@ -9,6 +9,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var poolButton: UIButton!
     @IBOutlet weak var bowlingButton: UIButton!
     @IBOutlet private var mapView: MKMapView!
+
   private var objectLocations: [ObjectLocations] = []
   
   enum ActivityType {

@@ -13,10 +13,11 @@ class ObjectLocations: NSObject, MKAnnotation {
     case activity = "Activity"
     
   }
-  
-  let title: String?
+
+  let id: UUID
+  var title: String?
   let locationType: LocationType
-  let coordinate: CLLocationCoordinate2D
+  var coordinate: CLLocationCoordinate2D
   
   init(
     title: String?,
@@ -26,7 +27,8 @@ class ObjectLocations: NSObject, MKAnnotation {
     self.title = title
     self.locationType = locationType
     self.coordinate = coordinate
-    
+    self.id = UUID()
+
     super.init()
   }
   
