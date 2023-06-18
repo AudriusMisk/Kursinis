@@ -99,7 +99,7 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
     performSegue(withIdentifier: segueIdentifier, sender: self)
   }
   
-}s
+}
 
 extension ListViewController: ReloadDelegate {
   func reload() {
