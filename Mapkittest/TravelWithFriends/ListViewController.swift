@@ -4,20 +4,37 @@ protocol ReloadDelegate: AnyObject {
     func reload()
 }
 
-class FriendsListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
-  
-  @IBOutlet weak var tableView: UITableView!
+class ListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
-  var people: [ObjectLocations] {
-    return People.people
+  enum ListType {
+    case people
+    case blowling
+    case cinema
+    case pool
   }
+
+  @IBOutlet weak var tableView: UITableView!
 
   let segueIdentifier = "PresentEditVC"
 
-  var itemId: UUID?
   var item: ObjectLocations?
 
   var actionType: EditViewController.ActionType = .add
+
+  var listType: ListType = .people
+
+  var people: [ObjectLocations] {
+    switch listType {
+    case .people:
+      return People.people
+    case .blowling:
+      return Activities.bowlings
+    case .cinema:
+      return Activities.cinemas
+    case .pool:
+      return Activities.pools
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,14 +53,6 @@ class FriendsListViewController: UIViewController,UITableViewDataSource, UITable
     navigationItem.rightBarButtonItem = addButton
   }
 
-//  override func viewDidAppear(_ animated: Bool) {
-//    tableView.reloadData()
-//  }
-//
-//  override func viewWillAppear(_ animated: Bool) {
-//    tableView.reloadData()
-//  }
-
   @objc func dismissButtonTapped() {
       dismiss(animated: true, completion: nil)
   }
@@ -54,17 +63,17 @@ class FriendsListViewController: UIViewController,UITableViewDataSource, UITable
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier == segueIdentifier {
+    if segue.identifier == segueIdentifier {
 
-        if let navigationController = segue.destination as? UINavigationController,
-           let destinationVC = navigationController.topViewController as? EditViewController {
-            // Customize the destination view controller here
-//          destinationVC.objectLocationIdentifier = itemId
-          destinationVC.actionType = actionType
-          destinationVC.editableObject = item
-          destinationVC.reloadDelegate = self
-        }
+      if let navigationController = segue.destination as? UINavigationController,
+         let destinationVC = navigationController.topViewController as? EditViewController {
+
+        destinationVC.actionType = actionType
+        destinationVC.editableObject = item
+        destinationVC.reloadDelegate = self
+        destinationVC.editableItemType = listType
       }
+    }
   }
 
   
@@ -86,27 +95,13 @@ class FriendsListViewController: UIViewController,UITableViewDataSource, UITable
     let item = people[indexPath.row]
     self.item = item
 
-//    let id = item.id
-//    itemId = id
-
     actionType = .edit
     performSegue(withIdentifier: segueIdentifier, sender: self)
   }
   
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
 }
 
-extension FriendsListViewController: ReloadDelegate {
+extension ListViewController: ReloadDelegate {
   func reload() {
     tableView.reloadData()
   }

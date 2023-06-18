@@ -25,7 +25,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To show you cool things nearby</string>
 	<key>UILaunchStoryboardName</key>
-	<string>Launch Screen1.storyboard</string>
+	<string>LaunchScreen.storyboard</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

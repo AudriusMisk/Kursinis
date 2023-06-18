@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8C656318-6E43-4133-BA63-2092BFF3C456"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravelWithFriends/FriendsListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B5B6EB58-9492-4A7A-8DF0-2375CF408BE4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -30,8 +14,8 @@
             filePath = "TravelWithFriends/EditViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "loadData()"
             landmarkType = "7">
             <Locations>
@@ -65,6 +49,21 @@
                   endingLineNumber = "60"
                   offsetFromSymbolStart = "80">
                </Location>
+               <Location
+                  uuid = "B5B6EB58-9492-4A7A-8DF0-2375CF408BE4 - d2e327e7c61788f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TravelWithFriends.EditViewController.loadData() -&gt; ()"
+                  moduleName = "TravelWithFriends"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/EditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "80">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,8 +77,8 @@
             filePath = "TravelWithFriends/EditViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "loadData()"
             landmarkType = "7">
             <Locations>
@@ -113,69 +112,20 @@
                   endingLineNumber = "61"
                   offsetFromSymbolStart = "128">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EBDE84A3-D31C-4130-A3C9-B427FA60ADEF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravelWithFriends/FriendsListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "FriendsListViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4868464D-B5EC-45EA-BCD3-718E192E11BF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravelWithFriends/FriendsListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "FriendsListViewController"
-            landmarkType = "3">
-            <Locations>
                <Location
-                  uuid = "4868464D-B5EC-45EA-BCD3-718E192E11BF - 1bc9f1e033e94544"
+                  uuid = "12663C27-7AE8-4BC8-A5BB-C2A1F4016861 - d2e327e7c61788d9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TravelWithFriends.FriendsListViewController.dismissButtonTapped() -&gt; ()"
+                  symbolName = "TravelWithFriends.EditViewController.loadData() -&gt; ()"
                   moduleName = "TravelWithFriends"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/FriendsListViewController.swift"
+                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/EditViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  uuid = "4868464D-B5EC-45EA-BCD3-718E192E11BF - 7784b83e9524fd66"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelWithFriends.FriendsListViewController.viewWillAppear(Swift.Bool) -&gt; ()"
-                  moduleName = "TravelWithFriends"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/FriendsListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "76">
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "128">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -184,14 +134,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "355C58C5-728E-41EC-807D-E58E79D4E515"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravelWithFriends/EditViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "addObject()"
             landmarkType = "7">
          </BreakpointContent>
@@ -200,16 +150,191 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "314F50D5-2EAC-46FE-A978-072561132E51"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravelWithFriends/EditViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "saveButtonTapped()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40D36294-C8C3-4DF0-A4DF-2D84517EB824"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravelWithFriends/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "40D36294-C8C3-4DF0-A4DF-2D84517EB824 - aed53312a727d8ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TravelWithFriends.HomeViewController.prepare(for: __C.UIStoryboardSegue, sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "TravelWithFriends"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "836">
+               </Location>
+               <Location
+                  uuid = "40D36294-C8C3-4DF0-A4DF-2D84517EB824 - aed53312a727d8af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TravelWithFriends.HomeViewController.prepare(for: __C.UIStoryboardSegue, sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "TravelWithFriends"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1056">
+               </Location>
+               <Location
+                  uuid = "40D36294-C8C3-4DF0-A4DF-2D84517EB824 - aed53312a727c758"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TravelWithFriends.HomeViewController.prepare(for: __C.UIStoryboardSegue, sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "TravelWithFriends"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "1056">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11AFC673-F162-4499-BDB2-D07DF13B8D63"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravelWithFriends/MapViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "closeClicked()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42D0BDE8-1054-442B-A6CE-02FFB6E0D7DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravelWithFriends/EditViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "42D0BDE8-1054-442B-A6CE-02FFB6E0D7DC - 53aade90d3d07850"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TravelWithFriends.EditViewController.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "TravelWithFriends"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/EditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "250"
+                  endingLineNumber = "250"
+                  offsetFromSymbolStart = "412">
+               </Location>
+               <Location
+                  uuid = "42D0BDE8-1054-442B-A6CE-02FFB6E0D7DC - 53aade90d3d07873"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TravelWithFriends.EditViewController.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "TravelWithFriends"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/EditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "412">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6BA4B9D-7D17-4750-9B31-44596CFD8584"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravelWithFriends/EditViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "currentClicked()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C6BA4B9D-7D17-4750-9B31-44596CFD8584 - 3a72b6df5d4ca81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TravelWithFriends.EditViewController.currentClicked() -&gt; ()"
+                  moduleName = "TravelWithFriends"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/EditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "C6BA4B9D-7D17-4750-9B31-44596CFD8584 - 3a72b6df5d4c90d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TravelWithFriends.EditViewController.currentClicked() -&gt; ()"
+                  moduleName = "TravelWithFriends"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/darius.miskinis/Developer/Kursinis/Mapkittest/TravelWithFriends/EditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "696">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

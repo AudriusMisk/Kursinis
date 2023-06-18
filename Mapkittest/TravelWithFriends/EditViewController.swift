@@ -21,7 +21,9 @@ class EditViewController: UIViewController {
 
   @IBOutlet weak var suggestionLabel: UILabel!
 
-  var objectLocationIdentifier: UUID?
+    @IBOutlet weak var currentLocationButton: UIButton!
+
+    var objectLocationIdentifier: UUID?
 
   private let completer = MKLocalSearchCompleter()
 
@@ -34,6 +36,13 @@ class EditViewController: UIViewController {
 
   weak var reloadDelegate: ReloadDelegate?
 
+  let locationManager = CLLocationManager()
+
+  var currentLoction: CLLocationCoordinate2D?
+  var shouldShowLocateCurrentLocationButton = false
+
+  var editableItemType: ListViewController.ListType = .people
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -43,8 +52,13 @@ class EditViewController: UIViewController {
 
     suggestionLabel.addBorder()
 
-
     locateButton.addTarget(self, action: #selector(locateClicked), for: .touchUpInside)
+
+      currentLocationButton.addTarget(self, action: #selector(currentClicked), for: .touchUpInside)
+
+    if !shouldShowLocateCurrentLocationButton {
+      currentLocationButton.isHidden = true
+    }
 
     let dismissButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissButtonTapped))
 
@@ -54,10 +68,24 @@ class EditViewController: UIViewController {
 
     navigationItem.rightBarButtonItem = saveButton
 
-    //      nameTextField.text = objectLocationIdentifier
-
     configureGestures()
     loadData()
+    startLocationTracking()
+  }
+
+  func startLocationTracking() {
+
+    // Set up the location manager
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+    // Request location authorization
+    locationManager.requestWhenInUseAuthorization()
+
+    // Check if location services are enabled
+    if CLLocationManager.locationServicesEnabled() {
+      locationManager.startUpdatingLocation()
+    }
   }
 
   private func loadData() {
@@ -113,8 +141,6 @@ class EditViewController: UIViewController {
       updateEdit()
     }
 
-
-
     dismiss(animated: true) {
         self.reloadDelegate?.reload()
     }
@@ -130,7 +156,18 @@ class EditViewController: UIViewController {
 
   private func addObject() {
     if let locatedLoction = locatedLoction, let name = nameTextField.text {
-      People.add(name: name, coordinate: locatedLoction)
+
+      switch editableItemType {
+      case .people:
+        People.add(name: name, coordinate: locatedLoction)
+      case .blowling:
+        Activities.addBowling(name: name, coordinate: locatedLoction)
+      case .cinema:
+        Activities.addCinema(name: name, coordinate: locatedLoction)
+      case .pool:
+        Activities.addPool(name: name, coordinate: locatedLoction)
+      }
+
     }
   }
 
@@ -150,6 +187,14 @@ class EditViewController: UIViewController {
     completer.queryFragment = query
 
     locateClicked()
+  }
+
+  @objc func currentClicked() {
+    let latitude = currentLoction?.latitude.description ?? ""
+    let longitude = currentLoction?.longitude.description ?? ""
+    let coordinates = latitude + "," + longitude
+
+    self.coordinatesTextField.text = coordinates
   }
 
   @objc func locateClicked() {
@@ -204,6 +249,23 @@ extension EditViewController: MKLocalSearchCompleterDelegate {
   func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
     print("Error suggesting a location: \(error.localizedDescription)")
   }
+}
+
+extension EditViewController: CLLocationManagerDelegate {
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      if let location = locations.last {
+          // Set the map view's region to display the user's current location
+//          let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+//          mapView.setRegion(region, animated: true)
+
+        currentLoction = locationManager.location?.coordinate
+
+          // Stop updating location once it's obtained
+          locationManager.stopUpdatingLocation()
+
+      }
+  }
+
 }
 
 extension UITextField {
