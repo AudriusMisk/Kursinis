@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ReloadDelegate: AnyObject {
-    func reload()
+  func reload()
 }
 
 class ListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
@@ -54,7 +54,7 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
   }
 
   @objc func dismissButtonTapped() {
-      dismiss(animated: true, completion: nil)
+    dismiss(animated: true, completion: nil)
   }
 
   @objc func addButtonTapped() {
@@ -99,7 +99,7 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
     performSegue(withIdentifier: segueIdentifier, sender: self)
   }
   
-}
+}s
 
 extension ListViewController: ReloadDelegate {
   func reload() {

@@ -5,15 +5,15 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
-    @IBOutlet weak var cinemaButton: UIButton!
-    @IBOutlet weak var poolButton: UIButton!
-    @IBOutlet weak var bowlingButton: UIButton!
-    @IBOutlet private var mapView: MKMapView!
-    @IBOutlet weak var closeButton: UIButton!
+  @IBOutlet weak var cinemaButton: UIButton!
+  @IBOutlet weak var poolButton: UIButton!
+  @IBOutlet weak var bowlingButton: UIButton!
+  @IBOutlet private var mapView: MKMapView!
+  @IBOutlet weak var closeButton: UIButton!
 
   let locationManager = CLLocationManager()
 
-    private var objectLocations: [ObjectLocations] = []
+  private var objectLocations: [ObjectLocations] = []
   
   enum ActivityType {
     case bowling
@@ -42,15 +42,15 @@ class MapViewController: UIViewController {
     let locations: [ObjectLocations] = [startLocation] + people + activities
     
     objectLocations = locations
-  
+
     let permutations = people.permutations(ofCount: people.count).map { Array($0) }
     var possibleRoutes = [[ObjectLocations]]()
 
     for a in activities {
-        for p in permutations {
-            let route: [ObjectLocations] = [startLocation] + p + [a]
-            possibleRoutes.append(route)
-        }
+      for p in permutations {
+        let route: [ObjectLocations] = [startLocation] + p + [a]
+        possibleRoutes.append(route)
+      }
     }
 
     findRoute(routes: possibleRoutes)
@@ -64,7 +64,7 @@ class MapViewController: UIViewController {
       for i in 1..<route.count{
         let previousLocation = route[i-1]
         let currentLocation = route[i]
-            
+
         let currentCLLocation = CLLocation(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
         let previousCLLocation = CLLocation(latitude: previousLocation.coordinate.latitude, longitude: previousLocation.coordinate.longitude)
         
@@ -83,43 +83,43 @@ class MapViewController: UIViewController {
     
     //kelio vaizdavimas
     if shortestRoute.count > 1 {
-        for i in 0..<shortestRoute.count-1 {
-            let sourcePlacemark = MKPlacemark(coordinate: shortestRoute[i].coordinate)
-            let destinationPlacemark = MKPlacemark(coordinate: shortestRoute[i+1].coordinate)
-            
-            let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
-            let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
-            
-            let directionsRequest = MKDirections.Request()
-            directionsRequest.source = sourceMapItem
-            directionsRequest.destination = destinationMapItem
-            directionsRequest.transportType = .automobile
-            
-            let directions = MKDirections(request: directionsRequest)
-            directions.calculate { response, error in
-                guard let route = response?.routes.first else {
-                    if let error = error {
-                        print("Error calculating route:", error.localizedDescription)
-                    }
-                    return
-                }
-                // nubrezia route
-                self.mapView.addOverlay(route.polyline)
+      for i in 0..<shortestRoute.count-1 {
+        let sourcePlacemark = MKPlacemark(coordinate: shortestRoute[i].coordinate)
+        let destinationPlacemark = MKPlacemark(coordinate: shortestRoute[i+1].coordinate)
+
+        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+
+        let directionsRequest = MKDirections.Request()
+        directionsRequest.source = sourceMapItem
+        directionsRequest.destination = destinationMapItem
+        directionsRequest.transportType = .automobile
+
+        let directions = MKDirections(request: directionsRequest)
+        directions.calculate { response, error in
+          guard let route = response?.routes.first else {
+            if let error = error {
+              print("Error calculating route:", error.localizedDescription)
             }
+            return
+          }
+          // nubrezia route
+          self.mapView.addOverlay(route.polyline)
         }
+      }
     }
     
   }
   
   func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-      if let polylineOverlay = overlay as? MKPolyline {
-          let renderer = MKPolylineRenderer(overlay: polylineOverlay)
-          renderer.strokeColor = UIColor.red
-          renderer.lineWidth = 3
-          return renderer
-      }
-      
-      return MKOverlayRenderer(overlay: overlay)
+    if let polylineOverlay = overlay as? MKPolyline {
+      let renderer = MKPolylineRenderer(overlay: polylineOverlay)
+      renderer.strokeColor = UIColor.red
+      renderer.lineWidth = 3
+      return renderer
+    }
+
+    return MKOverlayRenderer(overlay: overlay)
   }
   
   
@@ -128,11 +128,11 @@ class MapViewController: UIViewController {
     bowlingButton.addTarget(self, action: #selector(bowlingClicked), for: .touchUpInside)
     cinemaButton.addTarget(self, action: #selector(cinemaClicked), for: .touchUpInside)
     poolButton.addTarget(self, action: #selector(poolClicked), for: .touchUpInside)
-      closeButton.addTarget(self, action: #selector(closeClicked), for: .touchUpInside)
+    closeButton.addTarget(self, action: #selector(closeClicked), for: .touchUpInside)
 
 
     // setinu initiallocationa
-   let initialLocation = CLLocation(latitude: 54.702593, longitude: 25.288330)
+    let initialLocation = CLLocation(latitude: 54.702593, longitude: 25.288330)
     mapView.centerToLocation(initialLocation)
     
     let vilniusCenter = CLLocation(latitude: 54.689040, longitude: 25.268674)
@@ -152,27 +152,23 @@ class MapViewController: UIViewController {
     mapView.register(
       LocationMarkerView.self,
       forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-    
-   // mapView.addAnnotations(objectLocations)
-
-//    bowlingClicked()
 
     setupLocationTracking()
   }
 
   private func setupLocationTracking() {
 
-      // Set up the location manager
-      locationManager.delegate = self
-      locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    // Set up the location manager
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
 
-      // Request location authorization
-      locationManager.requestWhenInUseAuthorization()
+    // Request location authorization
+    locationManager.requestWhenInUseAuthorization()
 
-      // Check if location services are enabled
-      if CLLocationManager.locationServicesEnabled() {
-          locationManager.startUpdatingLocation()
-      }
+    // Check if location services are enabled
+    if CLLocationManager.locationServicesEnabled() {
+      locationManager.startUpdatingLocation()
+    }
   }
 
   
@@ -186,14 +182,14 @@ class MapViewController: UIViewController {
     mapView.addAnnotations(objectLocations)
   }
 
-    @objc func poolClicked() {
-        calc(activityType: .pool)
-        mapView.addAnnotations(objectLocations)
-    }
+  @objc func poolClicked() {
+    calc(activityType: .pool)
+    mapView.addAnnotations(objectLocations)
+  }
 
-    @objc func closeClicked() {
-        dismiss(animated: true)
-    }
+  @objc func closeClicked() {
+    dismiss(animated: true)
+  }
 
 }
 
@@ -225,13 +221,13 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-      if let location = locations.last {
-          // Set the map view's region to display the user's current location
-//          let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-//          mapView.setRegion(region, animated: true)
+    if let location = locations.last {
+      // Set the map view's region to display the user's current location
+      //          let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+      //          mapView.setRegion(region, animated: true)
 
-          // Stop updating location once it's obtained
-          locationManager.stopUpdatingLocation()
-      }
+      // Stop updating location once it's obtained
+      locationManager.stopUpdatingLocation()
+    }
   }
 }

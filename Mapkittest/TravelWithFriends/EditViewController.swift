@@ -21,9 +21,9 @@ class EditViewController: UIViewController {
 
   @IBOutlet weak var suggestionLabel: UILabel!
 
-    @IBOutlet weak var currentLocationButton: UIButton!
+  @IBOutlet weak var currentLocationButton: UIButton!
 
-    var objectLocationIdentifier: UUID?
+  var objectLocationIdentifier: UUID?
 
   private let completer = MKLocalSearchCompleter()
 
@@ -54,7 +54,7 @@ class EditViewController: UIViewController {
 
     locateButton.addTarget(self, action: #selector(locateClicked), for: .touchUpInside)
 
-      currentLocationButton.addTarget(self, action: #selector(currentClicked), for: .touchUpInside)
+    currentLocationButton.addTarget(self, action: #selector(currentClicked), for: .touchUpInside)
 
     if !shouldShowLocateCurrentLocationButton {
       currentLocationButton.isHidden = true
@@ -90,14 +90,6 @@ class EditViewController: UIViewController {
 
   private func loadData() {
 
-//    switch actionType {
-//    case .add:
-//      ()
-//    case .edit:
-//      nameTextField.text = editableObject?.title
-//      coordinatesTextField.text = (editableObject?.coordinate.latitude.description ?? "") + "," +  (editableObject?.coordinate.longitude.description ?? "")
-//    }
-
     if actionType == .edit {
       nameTextField.text = editableObject?.title
       coordinatesTextField.text = (editableObject?.coordinate.latitude.description ?? "") + "," +  (editableObject?.coordinate.longitude.description ?? "")
@@ -118,17 +110,14 @@ class EditViewController: UIViewController {
   }
 
   @objc private func suggestionTapped(_ gesture: UITapGestureRecognizer) {
-    //      hideSuggestionView(animated: true)
-
     addressTextField?.text = suggestionLabel.text
     locateClicked()
     suggestionLabel.text = nil
-    //      editingTextField = nil
   }
 
   @objc func dismissButtonTapped() {
     dismiss(animated: true) {
-        self.reloadDelegate?.reload()
+      self.reloadDelegate?.reload()
     }
   }
 
@@ -142,7 +131,7 @@ class EditViewController: UIViewController {
     }
 
     dismiss(animated: true) {
-        self.reloadDelegate?.reload()
+      self.reloadDelegate?.reload()
     }
   }
 
@@ -172,11 +161,7 @@ class EditViewController: UIViewController {
   }
 
   @IBAction func addressDidChange(_ sender: UITextField) {
-
-    //    }
-    //    @IBAction func AddressChanged(_ sender: UITextField, forEvent event: UIEvent) {
     guard let query = sender.contents else {
-      //          hideSuggestionView(animated: true)
 
       if completer.isSearching {
         completer.cancel()
@@ -253,17 +238,17 @@ extension EditViewController: MKLocalSearchCompleterDelegate {
 
 extension EditViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-      if let location = locations.last {
-          // Set the map view's region to display the user's current location
-//          let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-//          mapView.setRegion(region, animated: true)
+    if let location = locations.last {
+      // Set the map view's region to display the user's current location
+      //          let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+      //          mapView.setRegion(region, animated: true)
+      
+      currentLoction = locationManager.location?.coordinate
 
-        currentLoction = locationManager.location?.coordinate
+      // Stop updating location once it's obtained
+      locationManager.stopUpdatingLocation()
 
-          // Stop updating location once it's obtained
-          locationManager.stopUpdatingLocation()
-
-      }
+    }
   }
 
 }

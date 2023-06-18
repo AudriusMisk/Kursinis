@@ -3,7 +3,7 @@ import CoreLocation
 
 class People {
   
-  static var people:[ObjectLocations] = People.initializePersons()
+  static var people:[ObjectLocations] = initializePersons()
 
   static var myLocation: ObjectLocations = initializeStartLocation()
 
