@@ -1,7 +1,7 @@
 import Foundation
 import MapKit
 
-class ObjectLocations: NSObject, MKAnnotation {
+class ObjectLocation: NSObject, MKAnnotation {
   
   override var description: String{
     return title ?? "0"

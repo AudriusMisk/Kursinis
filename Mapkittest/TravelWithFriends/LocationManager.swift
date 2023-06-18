@@ -8,8 +8,8 @@ class LocationManager {
     let vilniusCenter = CLLocation(latitude: 54.689040, longitude: 25.268674)
     let region = MKCoordinateRegion(
       center: vilniusCenter.coordinate,
-      latitudinalMeters: 5000,
-      longitudinalMeters: 5000)
+      latitudinalMeters: 15000,
+      longitudinalMeters: 15000)
 
     return region
   }

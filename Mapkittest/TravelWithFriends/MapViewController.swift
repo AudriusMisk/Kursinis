@@ -13,7 +13,7 @@ class MapViewController: UIViewController {
 
   let locationManager = CLLocationManager()
 
-  private var objectLocations: [ObjectLocations] = []
+  private var objectLocations: [ObjectLocation] = []
   
   enum ActivityType {
     case bowling
@@ -26,7 +26,7 @@ class MapViewController: UIViewController {
   }
 
   func calc(activityType:ActivityType){
-    let activities: [ObjectLocations]
+    let activities: [ObjectLocation]
     switch activityType {
     case .bowling:
       activities = Activities.bowlings
@@ -39,16 +39,16 @@ class MapViewController: UIViewController {
     let startLocation = People.myLocation
     let people = People.people
 
-    let locations: [ObjectLocations] = [startLocation] + people + activities
+    let locations: [ObjectLocation] = [startLocation] + people + activities
     
     objectLocations = locations
 
     let permutations = people.permutations(ofCount: people.count).map { Array($0) }
-    var possibleRoutes = [[ObjectLocations]]()
+    var possibleRoutes = [[ObjectLocation]]()
 
     for a in activities {
       for p in permutations {
-        let route: [ObjectLocations] = [startLocation] + p + [a]
+        let route: [ObjectLocation] = [startLocation] + p + [a]
         possibleRoutes.append(route)
       }
     }
@@ -56,8 +56,8 @@ class MapViewController: UIViewController {
     findRoute(routes: possibleRoutes)
   }
   
-  func findRoute(routes:[[ObjectLocations]]) {
-    var shortestRoute:[ObjectLocations] = []
+  func findRoute(routes:[[ObjectLocation]]) {
+    var shortestRoute:[ObjectLocation] = []
     var shortestLength: Double = 0
     for route in routes{
       var length: Double = 0
@@ -210,7 +210,7 @@ extension MapViewController: MKMapViewDelegate {
     annotationView view: MKAnnotationView,
     calloutAccessoryControlTapped control: UIControl
   ) {
-    guard let location = view.annotation as? ObjectLocations else {
+    guard let location = view.annotation as? ObjectLocation else {
       return
     }
     
@@ -227,7 +227,7 @@ extension MapViewController: CLLocationManagerDelegate {
       //          mapView.setRegion(region, animated: true)
 
       // Stop updating location once it's obtained
-      locationManager.stopUpdatingLocation()
+      //locationManager.stopUpdatingLocation()
     }
   }
 }

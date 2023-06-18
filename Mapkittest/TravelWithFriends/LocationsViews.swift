@@ -5,7 +5,7 @@ class LocationMarkerView: MKMarkerAnnotationView {
   override var annotation: MKAnnotation? {
     willSet {
       // 1
-      guard let location = newValue as? ObjectLocations else {
+      guard let location = newValue as? ObjectLocation else {
         return
       }
       canShowCallout = true

@@ -17,13 +17,13 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
 
   let segueIdentifier = "PresentEditVC"
 
-  var item: ObjectLocations?
+  var item: ObjectLocation?
 
   var actionType: EditViewController.ActionType = .add
 
   var listType: ListType = .people
 
-  var people: [ObjectLocations] {
+  var people: [ObjectLocation] {
     switch listType {
     case .people:
       return People.people

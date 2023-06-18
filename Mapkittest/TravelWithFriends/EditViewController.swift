@@ -23,14 +23,14 @@ class EditViewController: UIViewController {
 
   @IBOutlet weak var currentLocationButton: UIButton!
 
-  var objectLocationIdentifier: UUID?
+//  var objectLocationIdentifier: UUID?
 
   private let completer = MKLocalSearchCompleter()
 
   var actionType: ActionType = .add
-  var objectType: ObjectLocations.LocationType = .person
+  var objectType: ObjectLocation.LocationType = .person
 
-  var editableObject: ObjectLocations? = nil
+  var editableObject: ObjectLocation? = nil
 
   var locatedLoction: CLLocationCoordinate2D?
 
@@ -38,7 +38,7 @@ class EditViewController: UIViewController {
 
   let locationManager = CLLocationManager()
 
-  var currentLoction: CLLocationCoordinate2D?
+//  var currentLoction: CLLocationCoordinate2D?
   var shouldShowLocateCurrentLocationButton = false
 
   var editableItemType: ListViewController.ListType = .people
@@ -175,8 +175,8 @@ class EditViewController: UIViewController {
   }
 
   @objc func currentClicked() {
-    let latitude = currentLoction?.latitude.description ?? ""
-    let longitude = currentLoction?.longitude.description ?? ""
+    let latitude = locatedLoction?.latitude.description ?? ""
+    let longitude = locatedLoction?.longitude.description ?? ""
     let coordinates = latitude + "," + longitude
 
     self.coordinatesTextField.text = coordinates
@@ -243,7 +243,7 @@ extension EditViewController: CLLocationManagerDelegate {
       //          let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
       //          mapView.setRegion(region, animated: true)
       
-      currentLoction = locationManager.location?.coordinate
+      locatedLoction = locationManager.location?.coordinate
 
       // Stop updating location once it's obtained
       locationManager.stopUpdatingLocation()

@@ -12,7 +12,7 @@
 		6830C4982A07A246007F0760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6830C4972A07A246007F0760 /* LaunchScreen.storyboard */; };
 		6837829F2A3645A8003B399A /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6837829E2A3645A8003B399A /* FriendTableViewCell.swift */; };
 		683782A32A3655ED003B399A /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683782A22A3655ED003B399A /* People.swift */; };
-		6871EEE329FD5DA200A22DB5 /* ObjectLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871EEE229FD5DA200A22DB5 /* ObjectLocations.swift */; };
+		6871EEE329FD5DA200A22DB5 /* ObjectLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871EEE229FD5DA200A22DB5 /* ObjectLocation.swift */; };
 		6871EEE529FD708600A22DB5 /* LocationsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871EEE429FD708600A22DB5 /* LocationsViews.swift */; };
 		6871EEE829FD7D9400A22DB5 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 6871EEE729FD7D9400A22DB5 /* Algorithms */; };
 		6879EDF52A363AA400EAEEDA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879EDF42A363AA400EAEEDA /* ListViewController.swift */; };
@@ -31,7 +31,7 @@
 		6830C4972A07A246007F0760 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6837829E2A3645A8003B399A /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		683782A22A3655ED003B399A /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
-		6871EEE229FD5DA200A22DB5 /* ObjectLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectLocations.swift; sourceTree = "<group>"; };
+		6871EEE229FD5DA200A22DB5 /* ObjectLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectLocation.swift; sourceTree = "<group>"; };
 		6871EEE429FD708600A22DB5 /* LocationsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViews.swift; sourceTree = "<group>"; };
 		6879EDF42A363AA400EAEEDA /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		782E4D3F2407047E0070BA73 /* Markers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markers.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				6837829E2A3645A8003B399A /* FriendTableViewCell.swift */,
 				782E4D3F2407047E0070BA73 /* Markers.swift */,
 				6871EEE429FD708600A22DB5 /* LocationsViews.swift */,
-				6871EEE229FD5DA200A22DB5 /* ObjectLocations.swift */,
+				6871EEE229FD5DA200A22DB5 /* ObjectLocation.swift */,
 				683782A22A3655ED003B399A /* People.swift */,
 				A3F864202A3F3762005C11E2 /* Activities.swift */,
 				A3F8641E2A3E2B84005C11E2 /* LocationManager.swift */,
@@ -182,7 +182,7 @@
 				680E85E32A072CC90083C06F /* AppDelegate.swift in Sources */,
 				680E85E22A07298B0083C06F /* MapViewController.swift in Sources */,
 				A3F8641F2A3E2B84005C11E2 /* LocationManager.swift in Sources */,
-				6871EEE329FD5DA200A22DB5 /* ObjectLocations.swift in Sources */,
+				6871EEE329FD5DA200A22DB5 /* ObjectLocation.swift in Sources */,
 				A3F864252A3F4D14005C11E2 /* ActivitiesViewController.swift in Sources */,
 				782E4D402407047E0070BA73 /* Markers.swift in Sources */,
 				683782A32A3655ED003B399A /* People.swift in Sources */,
